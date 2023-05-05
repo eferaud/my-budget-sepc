@@ -1,0 +1,26 @@
+@startuml
+
+class InvoiceCategory {
+  id : int
+  label : string
+}
+
+class Period {
+  name : string
+  locked : boolean
+}
+
+class Invoice {
+  id : int
+  title : string
+  date : date
+  price : float
+  shared : boolean
+  recurrent : boolean
+  owner : string
+}
+
+Invoice "1..n"--"1" Period
+Invoice "1..n"--"1" InvoiceCategory
+
+@enduml
